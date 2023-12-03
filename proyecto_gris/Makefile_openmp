@@ -1,0 +1,11 @@
+CXX = g++
+CXXFLAGS = -std=c++11 -Wall -fopenmp -I/usr/include/opencv4
+LIBS = -lopencv_core -lopencv_highgui -lopencv_imgcodecs
+
+all: grayscale_openmp
+
+grayscale_openmp: main.cpp
+	$(CXX) $(CXXFLAGS) -o grayscale_openmp main.cpp $(LIBS)
+
+clean:
+	rm -f grayscale_openmp
